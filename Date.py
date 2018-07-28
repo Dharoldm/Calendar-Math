@@ -1,3 +1,5 @@
+from LinkedList import LinkedList, HashListNode
+
 class Date(object):
     def __init__(self, day, month, year):
         months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -5,8 +7,11 @@ class Date(object):
         self.day = day
         self.month = month
         self.year = year
+        self.calendar = LinkedList()
         for i in range(0,12):
-            print([months[i],days[i]])
+            self.calendar.append(months[i],days[i])
+        self.calendar.tail.next = self.calendar.head
+        print(self.calendar)
 
     def __repr__(self):
         return f"{self.month} {self.day}, {self.year}"
