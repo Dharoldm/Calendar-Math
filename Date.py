@@ -71,7 +71,7 @@ class Date(object):
                         leap = True
                     else:
                         leap = False
-                while curr_month < goal_month:
+                while curr_month < goal_month-1:
                     if leap is True and month.key == "Feb":
                         days += 29
                         month = month.next
@@ -133,7 +133,7 @@ class Date(object):
         return days
 
 
-test = Date(1, "Mar", 2002)
-that = Date(1, "Apr", 2205)
+test = Date(11, "Jul", 1901)
+that = Date(30, "Apr", 2837)
 print(test)
 print(test.subtraction(that))
